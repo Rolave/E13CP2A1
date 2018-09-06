@@ -1,0 +1,26 @@
+<div class="todos">
+  <div class="todos__create">
+    <h2>Agregar ToDo</h2>
+    <%= link_to todos_new_path, class: "todos__create__btn" do %>
+      <i class="fas fa-plus-circle"></i>
+    <% end %>
+  </div>
+  <h3>Todos</h3>
+  <div class="todos__items">
+    <% @todos.each do |t| %>
+      <div class="well">
+        <div class="description">
+          <a href="<%= todo_path(t) %>"><%= t.description %></a>
+        </div>
+        <div class="actions">
+        <%= link_to "Edit", edit_todo_path(t), class:'btn btn-xs btn-default' %>
+        <%= link_to 'Destroy', todo_path(t), method: :delete, class:'btn btn-xs btn-danger' %>
+        <%=  link_to 'Completed', complete_todo_path(t), class:'btn btn-xs btn-success' unless t.completed  %>
+        </div>
+        <div class="status">
+          <%= raw t.completed ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-circle"></i>' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

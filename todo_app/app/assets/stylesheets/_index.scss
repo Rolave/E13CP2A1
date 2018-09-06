@@ -1,0 +1,131 @@
+.todos {
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+
+  &__items {
+
+    .well {
+      background-color: $light-gray;
+      border-color: $light-gray;
+
+      .description {
+        margin-bottom: 10px;
+
+        a {
+          color: $dark-gray;
+          font-size: 1.2em;
+          font-weight: 300;
+          transition: all .3s ease-in-out;
+
+          &:hover {
+            color: $dark-purple;
+            text-decoration: none;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  &__create {
+    @include clearfix;
+
+    h2 {
+      color: $dark-gray;
+      float: left;
+      font-size: 1.5em;
+      font-weight: 300;
+      line-height: 40px;
+      margin: 0;
+      overflow: hidden;
+      text-transform: uppercase;
+    }
+
+    &__btn {
+      color: $danger-red;
+      display: block;
+      float: right;
+      font-size: 40px;
+      line-height: 40px;
+      margin: 0 auto;
+      opacity: .75;
+      transition: all .3s ease-in-out;
+      width: 40px;
+
+      &:hover {
+        color: $danger-red;
+        opacity: 1;
+        transform: scale(1.15);
+      }
+
+    }
+
+  }
+
+  h3 {
+    color: $dark-gray;
+    border-bottom: 1px solid $mid-gray;
+    font-size: 1.25em;
+    font-weight: 400;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+  }
+
+  &__form {
+
+    form {
+
+      label {
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+
+      input[type=checkbox] {
+        display: none;
+
+        &:checked {
+
+          + span {
+            color: $yellow;
+
+            &::before {
+              content: '\f14a';
+            }
+          }
+
+        }
+
+      }
+
+      span {
+        color: $dark-gray;
+        cursor: pointer;
+        font-weight: 400;
+        user-select: none;
+
+        &::before {
+          content: '\f0c8';
+          display: block;
+          float: left;
+          font-family: 'Font Awesome 5 Free';
+          margin-right: 5px;
+        }
+
+      }
+
+      p {
+        font-size: 10px;
+        margin: 10px 0 0 0;
+        text-transform: uppercase;
+      }
+
+    }
+
+  }
+
+}
